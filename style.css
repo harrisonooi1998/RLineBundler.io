@@ -2,18 +2,19 @@
 
 h1,h5{
     font-family: 'Roboto', sans-serif;
-    color: White;
+    color: black;
 }
 
 
 h4{
     font-family: 'Roboto', sans-serif;
-    color: white; 
+    color: black; 
 }
 
 body{
-    background-color: #0cbaba;
-background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+    /* background-color: whitesmoke */
+    background-color: #eec0c6;
+    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);    
     min-height: 100vh;
  
 }
