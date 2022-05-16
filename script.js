@@ -167,6 +167,7 @@ brandcodeFormats = {
   '80706862':'1',
   '80706877':'1',
   '82318243':'8',
+  '69420' : 'me'
   }
   
   photos = {
@@ -189,22 +190,34 @@ brandcodeFormats = {
     '91' : "./images/91.png",
     '95' : "./images/95.png",
     '96' : "./images/96.png",
-    '98' : "./images/98.png"
+    '98' : "./images/98.png",
+    'meme' : "./images/me.jpg"
   }
   
   const buttonBefore = document.querySelector('.buttonBefore')
   const buttonAfter = document.querySelector('.buttonAfter')
   const submitBtn = document.querySelector('.submitBtn')
   const body = document.querySelector('body')
+  // labelsFrom.textContent = `Changing Over From Format: ${}`
+  // labelTo.textContent = `Changing Over To Format: ${}`
+  const labelsFrom = document.querySelector('.labelsFrom')
+  const labelsTo = document.querySelector('.labelsTo')
   submitBtn.addEventListener("click", send)
   
   function send(e) {
     e.preventDefault()
-    console.log(buttonBefore.value)
-    console.log(buttonAfter.value)
+    // console.log(buttonBefore.value)
+    // console.log(buttonAfter.value)
     const myImage = document.createElement("img")
     const desiredKey = brandcodeFormats[buttonBefore.value] + brandcodeFormats[buttonAfter.value]
-    // console.log(desiredKey)
+    beforeButton = buttonBefore.value
+    afterButton = buttonAfter.value
+    formatBefore = brandcodeFormats[beforeButton]
+    formatAfter = brandcodeFormats[afterButton]
+    // console.log(brandcodeFormats[beforeButton])
+
+    labelsFrom.textContent= `Changing Over From Format: ${formatBefore}`
+    labelsTo.textContent= `Changing Over From Format: ${formatAfter}`
     if (Object.keys(photos).includes(desiredKey)) {
       myImage.src = photos[desiredKey]
       body.appendChild(myImage)
